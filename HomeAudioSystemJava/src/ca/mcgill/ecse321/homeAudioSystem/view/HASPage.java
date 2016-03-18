@@ -1,6 +1,5 @@
 package ca.mcgill.ecse321.homeAudioSystem.view;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -12,14 +11,12 @@ import org.jdatepicker.impl.JDatePickerImpl;
 import org.jdatepicker.impl.SqlDateModel;
 
 import ca.mcgill.ecse321.homeAudioSystem.controller.HASController;
-import ca.mcgill.ecse321.homeAudioSystem.controller.InvalidInputException;
 
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.sql.Date;
-import java.util.Calendar;
 import java.util.Properties;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
@@ -28,11 +25,11 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JLabel;
 import java.awt.Color;
 
-public class HASPage extends JFrame {
-
-	/**
-	 * 
-	 */
+/**
+ * The main GUI for the application.
+ */
+public class HASPage extends JFrame
+{
 	private static final long serialVersionUID = -3682655918812380166L;
 	private JPanel contentPane;
 	private JTextField nameAlbumTextF;
@@ -48,25 +45,10 @@ public class HASPage extends JFrame {
 	private JLabel errorMessage;
 	
 	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					HASPage frame = new HASPage();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
 	 * Create the frame.
 	 */
-	public HASPage() {
+	public HASPage()
+	{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -171,6 +153,9 @@ public class HASPage extends JFrame {
 		
 	}
 	
+	/**
+	 * Updates all visual elements with current data from the model
+	 */
 	private void refreshData()
 	{
 		errorMessage.setText(error);
@@ -179,7 +164,5 @@ public class HASPage extends JFrame {
 		{
 			releaseDatePicker.getModel().setValue(null);
 		}
-		
-		
 	}
 }

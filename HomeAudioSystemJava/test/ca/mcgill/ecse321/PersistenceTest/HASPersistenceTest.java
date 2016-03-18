@@ -23,13 +23,14 @@ public class HASPersistenceTest {
 		Manager m = Manager.getInstance();
 		
 		String name = "yellow sub";
-		String genre = "rock";
 		Calendar c =  Calendar.getInstance();
 	
 		Date date = new Date(c.getTimeInMillis());
 		
 		
-		Album album = new Album(name, genre, date);
+		Album album = new Album(name, date);
+		
+		album.setGenre(Album.Genre.Rock);
 		
 		m.addAlbum(album);
 		

@@ -71,14 +71,13 @@ public class HASControllerTest {
 		assertEquals(0, m.getAlbums().size());
 		
 		String name = "";
-		String genre = "";
 		Date releaseDate = null;
-		
+		String genre = "";
 		String error = null;
 		HASController hasC = new HASController();
 		
 		try {
-			hasC.addAlbum(name,genre,releaseDate);
+			hasC.addAlbum(name, genre, releaseDate);
 		} catch (Exception e) {
 			error = e.getMessage();
 		}
@@ -99,7 +98,7 @@ public class HASControllerTest {
 		Calendar c = Calendar.getInstance();
 		
 		String name = "Yellow Submarine";
-		String genre = "rock";
+		String genre = "Rock";
 		Date releaseDate = new Date(c.getTimeInMillis());
 		
 		String error = null;
@@ -116,7 +115,7 @@ public class HASControllerTest {
 		
 		assertEquals(1, m2.getAlbums().size());
 		assertEquals("Yellow Submarine", m2.getAlbum(0).getName());
-		assertEquals("rock", m2.getAlbum(0).getGenre());
+		assertEquals("Rock", m2.getAlbum(0).getGenre().toString());
 		assertEquals(releaseDate.toString(), m2.getAlbum(0).getReleaseDate().toString());
 		
 	}

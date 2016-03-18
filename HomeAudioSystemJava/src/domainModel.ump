@@ -1,5 +1,6 @@
 namespace ca.mcgill.ecse321.homeAudioSystem.model;
 
+use domainModelJava.ump;
 
 class Manager
 {
@@ -8,66 +9,83 @@ class Manager
     1 ->* Album;
     1 ->* Artist;
     1 ->* Playlist;
+    1 ->* Location;
+    1 ->* Song;
 
 }
 
-class Album
-{
-    name;
-    genre;
-    Date releaseDate;
-    0..1 --* Song;
 
-}
-
-class Artist
+class ListOfSong 
 {
-    name;
-    1 --* Song;
+  abstract;
+  * -> * Song;
   
 }
 
-class Playlist
-{
-    name;
-    * ->* Song;
-}
-
-class Song
-{
-    name;
-
-}//$?[End_of_model]$?
-
-class Manager
-{
-  position 50 30 109 45;
-}
 
 class Album
 {
-  position 197 115 148 98;
-  position.association Album__Song 6,98 30,0;
+    isA ListOfSong;
+    name;
+    Date releaseDate;
+    
 }
 
 class Artist
 {
-  position 39 186 113 61;
-  position.association Artist__Song 31,61 30,0;
-}
+  
+    isA ListOfSong;
+    name;
 
-class Manager
-{
-  position 50 30 109 45;
-  position.association Manager__Playlist 110,10 0,10;
 }
 
 class Playlist
 {
-  position 347 29 113 61;
+    isA ListOfSong;
+    name;
+
 }
 
 class Song
 {
-  position 50 430 109 45;
+    name;
+    Time duration;
+
+}
+
+class Location
+{
+	name;
+	Integer volume;
+    1 -> * ListOfSong;
+    boolean isMuted = false;
+
+}
+
+//$?[End_of_model]$?
+
+class ListOfSong
+{
+  position 260 290 109 39;
+  position.association ListOfSong__Song 106,0 8,28;
+}
+
+class Manager
+{
+  position.association Location__Manager 110,11 0,10;
+}
+
+class Location
+{
+  position.association ListOfSong__Location 14,28 103,0;
+}
+
+class Artist
+{
+  position 161 220 109 28;
+}
+
+class Album
+{
+  position 50 215 109 28;
 }

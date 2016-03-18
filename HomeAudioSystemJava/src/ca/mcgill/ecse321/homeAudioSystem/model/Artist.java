@@ -4,9 +4,9 @@
 package ca.mcgill.ecse321.homeAudioSystem.model;
 import java.util.*;
 
-// line 23 "../../../../../domainModel.ump"
-// line 53 "../../../../../domainModel.ump"
-public class Artist
+// line 34 "../../../../../domainModel.ump"
+// line 83 "../../../../../domainModel.ump"
+public class Artist extends ListOfSong
 {
 
   //------------------------
@@ -16,17 +16,14 @@ public class Artist
   //Artist Attributes
   private String name;
 
-  //Artist Associations
-  private List<Song> songs;
-
   //------------------------
   // CONSTRUCTOR
   //------------------------
 
   public Artist(String aName)
   {
+    super();
     name = aName;
-    songs = new ArrayList<Song>();
   }
 
   //------------------------
@@ -46,115 +43,9 @@ public class Artist
     return name;
   }
 
-  public Song getSong(int index)
-  {
-    Song aSong = songs.get(index);
-    return aSong;
-  }
-
-  public List<Song> getSongs()
-  {
-    List<Song> newSongs = Collections.unmodifiableList(songs);
-    return newSongs;
-  }
-
-  public int numberOfSongs()
-  {
-    int number = songs.size();
-    return number;
-  }
-
-  public boolean hasSongs()
-  {
-    boolean has = songs.size() > 0;
-    return has;
-  }
-
-  public int indexOfSong(Song aSong)
-  {
-    int index = songs.indexOf(aSong);
-    return index;
-  }
-
-  public static int minimumNumberOfSongs()
-  {
-    return 0;
-  }
-
-  public Song addSong(String aName)
-  {
-    return new Song(aName, this);
-  }
-
-  public boolean addSong(Song aSong)
-  {
-    boolean wasAdded = false;
-    if (songs.contains(aSong)) { return false; }
-    Artist existingArtist = aSong.getArtist();
-    boolean isNewArtist = existingArtist != null && !this.equals(existingArtist);
-    if (isNewArtist)
-    {
-      aSong.setArtist(this);
-    }
-    else
-    {
-      songs.add(aSong);
-    }
-    wasAdded = true;
-    return wasAdded;
-  }
-
-  public boolean removeSong(Song aSong)
-  {
-    boolean wasRemoved = false;
-    //Unable to remove aSong, as it must always have a artist
-    if (!this.equals(aSong.getArtist()))
-    {
-      songs.remove(aSong);
-      wasRemoved = true;
-    }
-    return wasRemoved;
-  }
-
-  public boolean addSongAt(Song aSong, int index)
-  {  
-    boolean wasAdded = false;
-    if(addSong(aSong))
-    {
-      if(index < 0 ) { index = 0; }
-      if(index > numberOfSongs()) { index = numberOfSongs() - 1; }
-      songs.remove(aSong);
-      songs.add(index, aSong);
-      wasAdded = true;
-    }
-    return wasAdded;
-  }
-
-  public boolean addOrMoveSongAt(Song aSong, int index)
-  {
-    boolean wasAdded = false;
-    if(songs.contains(aSong))
-    {
-      if(index < 0 ) { index = 0; }
-      if(index > numberOfSongs()) { index = numberOfSongs() - 1; }
-      songs.remove(aSong);
-      songs.add(index, aSong);
-      wasAdded = true;
-    } 
-    else 
-    {
-      wasAdded = addSongAt(aSong, index);
-    }
-    return wasAdded;
-  }
-
   public void delete()
   {
-    for(int i=songs.size(); i > 0; i--)
-    {
-      Song aSong = songs.get(i - 1);
-      aSong.delete();
-    }
+    super.delete();
   }
 
 

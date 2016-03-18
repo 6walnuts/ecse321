@@ -4,10 +4,10 @@
 package ca.mcgill.ecse321.homeAudioSystem.model;
 import java.util.*;
 import java.sql.Date;
+import java.sql.Time;
 
-// line 4 "../../../../../domainModel.ump"
-// line 42 "../../../../../domainModel.ump"
-// line 59 "../../../../../domainModel.ump"
+// line 5 "../../../../../domainModel.ump"
+// line 73 "../../../../../domainModel.ump"
 public class Manager
 {
 
@@ -25,6 +25,8 @@ public class Manager
   private List<Album> albums;
   private List<Artist> artists;
   private List<Playlist> playlists;
+  private List<Location> locations;
+  private List<Song> songs;
 
   //------------------------
   // CONSTRUCTOR
@@ -35,6 +37,8 @@ public class Manager
     albums = new ArrayList<Album>();
     artists = new ArrayList<Artist>();
     playlists = new ArrayList<Playlist>();
+    locations = new ArrayList<Location>();
+    songs = new ArrayList<Song>();
   }
 
   public static Manager getInstance()
@@ -137,6 +141,66 @@ public class Manager
   public int indexOfPlaylist(Playlist aPlaylist)
   {
     int index = playlists.indexOf(aPlaylist);
+    return index;
+  }
+
+  public Location getLocation(int index)
+  {
+    Location aLocation = locations.get(index);
+    return aLocation;
+  }
+
+  public List<Location> getLocations()
+  {
+    List<Location> newLocations = Collections.unmodifiableList(locations);
+    return newLocations;
+  }
+
+  public int numberOfLocations()
+  {
+    int number = locations.size();
+    return number;
+  }
+
+  public boolean hasLocations()
+  {
+    boolean has = locations.size() > 0;
+    return has;
+  }
+
+  public int indexOfLocation(Location aLocation)
+  {
+    int index = locations.indexOf(aLocation);
+    return index;
+  }
+
+  public Song getSong(int index)
+  {
+    Song aSong = songs.get(index);
+    return aSong;
+  }
+
+  public List<Song> getSongs()
+  {
+    List<Song> newSongs = Collections.unmodifiableList(songs);
+    return newSongs;
+  }
+
+  public int numberOfSongs()
+  {
+    int number = songs.size();
+    return number;
+  }
+
+  public boolean hasSongs()
+  {
+    boolean has = songs.size() > 0;
+    return has;
+  }
+
+  public int indexOfSong(Song aSong)
+  {
+    int index = songs.indexOf(aSong);
     return index;
   }
 
@@ -311,11 +375,127 @@ public class Manager
     return wasAdded;
   }
 
+  public static int minimumNumberOfLocations()
+  {
+    return 0;
+  }
+
+  public boolean addLocation(Location aLocation)
+  {
+    boolean wasAdded = false;
+    if (locations.contains(aLocation)) { return false; }
+    locations.add(aLocation);
+    wasAdded = true;
+    return wasAdded;
+  }
+
+  public boolean removeLocation(Location aLocation)
+  {
+    boolean wasRemoved = false;
+    if (locations.contains(aLocation))
+    {
+      locations.remove(aLocation);
+      wasRemoved = true;
+    }
+    return wasRemoved;
+  }
+
+  public boolean addLocationAt(Location aLocation, int index)
+  {  
+    boolean wasAdded = false;
+    if(addLocation(aLocation))
+    {
+      if(index < 0 ) { index = 0; }
+      if(index > numberOfLocations()) { index = numberOfLocations() - 1; }
+      locations.remove(aLocation);
+      locations.add(index, aLocation);
+      wasAdded = true;
+    }
+    return wasAdded;
+  }
+
+  public boolean addOrMoveLocationAt(Location aLocation, int index)
+  {
+    boolean wasAdded = false;
+    if(locations.contains(aLocation))
+    {
+      if(index < 0 ) { index = 0; }
+      if(index > numberOfLocations()) { index = numberOfLocations() - 1; }
+      locations.remove(aLocation);
+      locations.add(index, aLocation);
+      wasAdded = true;
+    } 
+    else 
+    {
+      wasAdded = addLocationAt(aLocation, index);
+    }
+    return wasAdded;
+  }
+
+  public static int minimumNumberOfSongs()
+  {
+    return 0;
+  }
+
+  public boolean addSong(Song aSong)
+  {
+    boolean wasAdded = false;
+    if (songs.contains(aSong)) { return false; }
+    songs.add(aSong);
+    wasAdded = true;
+    return wasAdded;
+  }
+
+  public boolean removeSong(Song aSong)
+  {
+    boolean wasRemoved = false;
+    if (songs.contains(aSong))
+    {
+      songs.remove(aSong);
+      wasRemoved = true;
+    }
+    return wasRemoved;
+  }
+
+  public boolean addSongAt(Song aSong, int index)
+  {  
+    boolean wasAdded = false;
+    if(addSong(aSong))
+    {
+      if(index < 0 ) { index = 0; }
+      if(index > numberOfSongs()) { index = numberOfSongs() - 1; }
+      songs.remove(aSong);
+      songs.add(index, aSong);
+      wasAdded = true;
+    }
+    return wasAdded;
+  }
+
+  public boolean addOrMoveSongAt(Song aSong, int index)
+  {
+    boolean wasAdded = false;
+    if(songs.contains(aSong))
+    {
+      if(index < 0 ) { index = 0; }
+      if(index > numberOfSongs()) { index = numberOfSongs() - 1; }
+      songs.remove(aSong);
+      songs.add(index, aSong);
+      wasAdded = true;
+    } 
+    else 
+    {
+      wasAdded = addSongAt(aSong, index);
+    }
+    return wasAdded;
+  }
+
   public void delete()
   {
     albums.clear();
     artists.clear();
     playlists.clear();
+    locations.clear();
+    songs.clear();
   }
 
 }
