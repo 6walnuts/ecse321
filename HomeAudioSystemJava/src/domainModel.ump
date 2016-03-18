@@ -1,0 +1,73 @@
+namespace ca.mcgill.ecse321.homeAudioSystem.model;
+
+
+class Manager
+{
+    singleton;
+  
+    1 ->* Album;
+    1 ->* Artist;
+    1 ->* Playlist;
+
+}
+
+class Album
+{
+    name;
+    genre;
+    Date releaseDate;
+    0..1 --* Song;
+
+}
+
+class Artist
+{
+    name;
+    1 --* Song;
+  
+}
+
+class Playlist
+{
+    name;
+    * ->* Song;
+}
+
+class Song
+{
+    name;
+
+}//$?[End_of_model]$?
+
+class Manager
+{
+  position 50 30 109 45;
+}
+
+class Album
+{
+  position 197 115 148 98;
+  position.association Album__Song 6,98 30,0;
+}
+
+class Artist
+{
+  position 39 186 113 61;
+  position.association Artist__Song 31,61 30,0;
+}
+
+class Manager
+{
+  position 50 30 109 45;
+  position.association Manager__Playlist 110,10 0,10;
+}
+
+class Playlist
+{
+  position 347 29 113 61;
+}
+
+class Song
+{
+  position 50 430 109 45;
+}

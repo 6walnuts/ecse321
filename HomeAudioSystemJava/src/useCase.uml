@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_pqZBcNjXEeWqoqMcLMry-Q" name="RootElement">
+  <packagedElement xmi:type="uml:Actor" xmi:id="_sPLSYNjXEeWqoqMcLMry-Q" name="User"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_v-5scNjXEeWqoqMcLMry-Q" name="Add Album"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_yr2a4NjXEeWqoqMcLMry-Q" name="Save Has setting"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_1pcNYNjXEeWqoqMcLMry-Q" name="Play/Pause Music"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_6ef30NjXEeWqoqMcLMry-Q" name="Add Song"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_8PhwkNjXEeWqoqMcLMry-Q" name="Search Song"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_9qkLMNjXEeWqoqMcLMry-Q" name="Create Location"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_BwBksNjYEeWqoqMcLMry-Q" name="Send music to location"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_FJrBENjYEeWqoqMcLMry-Q" name="Add/Create Playlist"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_GzWUoNjYEeWqoqMcLMry-Q" name="Set Volume"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_MM06wNjYEeWqoqMcLMry-Q" memberEnd="_MNEyYNjYEeWqoqMcLMry-Q _MNGAgNjYEeWqoqMcLMry-Q">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_MM5zQNjYEeWqoqMcLMry-Q" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_MM6aUNjYEeWqoqMcLMry-Q" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_MNEyYNjYEeWqoqMcLMry-Q" name="user" type="_sPLSYNjXEeWqoqMcLMry-Q" association="_MM06wNjYEeWqoqMcLMry-Q"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_MNGAgNjYEeWqoqMcLMry-Q" name="add album" type="_v-5scNjXEeWqoqMcLMry-Q" association="_MM06wNjYEeWqoqMcLMry-Q"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_MxypANjYEeWqoqMcLMry-Q" memberEnd="_Mx1FQdjYEeWqoqMcLMry-Q _Mx2TYNjYEeWqoqMcLMry-Q">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Mx0eMNjYEeWqoqMcLMry-Q" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Mx1FQNjYEeWqoqMcLMry-Q" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_Mx1FQdjYEeWqoqMcLMry-Q" name="user" type="_sPLSYNjXEeWqoqMcLMry-Q" association="_MxypANjYEeWqoqMcLMry-Q"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_Mx2TYNjYEeWqoqMcLMry-Q" name="save has setting" type="_yr2a4NjXEeWqoqMcLMry-Q" association="_MxypANjYEeWqoqMcLMry-Q"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_OtKJgNjYEeWqoqMcLMry-Q" memberEnd="_OtNM0NjYEeWqoqMcLMry-Q _OtNz4NjYEeWqoqMcLMry-Q">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_OtL-sNjYEeWqoqMcLMry-Q" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_OtMlwNjYEeWqoqMcLMry-Q" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_OtNM0NjYEeWqoqMcLMry-Q" name="user" type="_sPLSYNjXEeWqoqMcLMry-Q" association="_OtKJgNjYEeWqoqMcLMry-Q"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_OtNz4NjYEeWqoqMcLMry-Q" name="play/pause music" type="_1pcNYNjXEeWqoqMcLMry-Q" association="_OtKJgNjYEeWqoqMcLMry-Q"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_PN6tMNjYEeWqoqMcLMry-Q" memberEnd="_PN77UdjYEeWqoqMcLMry-Q _PN77UtjYEeWqoqMcLMry-Q">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_PN7UQNjYEeWqoqMcLMry-Q" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_PN77UNjYEeWqoqMcLMry-Q" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_PN77UdjYEeWqoqMcLMry-Q" name="user" type="_sPLSYNjXEeWqoqMcLMry-Q" association="_PN6tMNjYEeWqoqMcLMry-Q"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_PN77UtjYEeWqoqMcLMry-Q" name="set volume" type="_GzWUoNjYEeWqoqMcLMry-Q" association="_PN6tMNjYEeWqoqMcLMry-Q"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_RKuYINjYEeWqoqMcLMry-Q" memberEnd="_RKw0YNjYEeWqoqMcLMry-Q _RKxbcNjYEeWqoqMcLMry-Q">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_RKvmQNjYEeWqoqMcLMry-Q" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_RKwNUNjYEeWqoqMcLMry-Q" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_RKw0YNjYEeWqoqMcLMry-Q" name="user" type="_sPLSYNjXEeWqoqMcLMry-Q" association="_RKuYINjYEeWqoqMcLMry-Q"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_RKxbcNjYEeWqoqMcLMry-Q" name="add/create playlist" type="_FJrBENjYEeWqoqMcLMry-Q" association="_RKuYINjYEeWqoqMcLMry-Q"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_SQNZgNjYEeWqoqMcLMry-Q" memberEnd="_SQPOsNjYEeWqoqMcLMry-Q _SQQc0NjYEeWqoqMcLMry-Q">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SQOAkNjYEeWqoqMcLMry-Q" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SQOnoNjYEeWqoqMcLMry-Q" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_SQPOsNjYEeWqoqMcLMry-Q" name="user" type="_sPLSYNjXEeWqoqMcLMry-Q" association="_SQNZgNjYEeWqoqMcLMry-Q"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_SQQc0NjYEeWqoqMcLMry-Q" name="send music to location" type="_BwBksNjYEeWqoqMcLMry-Q" association="_SQNZgNjYEeWqoqMcLMry-Q"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_SuTqwNjYEeWqoqMcLMry-Q" memberEnd="_SuVf8NjYEeWqoqMcLMry-Q _SuWHANjYEeWqoqMcLMry-Q">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SuUR0NjYEeWqoqMcLMry-Q" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SuU44NjYEeWqoqMcLMry-Q" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_SuVf8NjYEeWqoqMcLMry-Q" name="user" type="_sPLSYNjXEeWqoqMcLMry-Q" association="_SuTqwNjYEeWqoqMcLMry-Q"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_SuWHANjYEeWqoqMcLMry-Q" name="create location" type="_9qkLMNjXEeWqoqMcLMry-Q" association="_SuTqwNjYEeWqoqMcLMry-Q"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_TPYXgNjYEeWqoqMcLMry-Q" memberEnd="_TPazwNjYEeWqoqMcLMry-Q _TPba0NjYEeWqoqMcLMry-Q">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_TPZloNjYEeWqoqMcLMry-Q" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_TPaMsNjYEeWqoqMcLMry-Q" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_TPazwNjYEeWqoqMcLMry-Q" name="user" type="_sPLSYNjXEeWqoqMcLMry-Q" association="_TPYXgNjYEeWqoqMcLMry-Q"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_TPba0NjYEeWqoqMcLMry-Q" name="search song" type="_8PhwkNjXEeWqoqMcLMry-Q" association="_TPYXgNjYEeWqoqMcLMry-Q"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_TvgCANjYEeWqoqMcLMry-Q" memberEnd="_Tvh3MdjYEeWqoqMcLMry-Q _TvjFUNjYEeWqoqMcLMry-Q">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_TvhQINjYEeWqoqMcLMry-Q" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Tvh3MNjYEeWqoqMcLMry-Q" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_Tvh3MdjYEeWqoqMcLMry-Q" name="user" type="_sPLSYNjXEeWqoqMcLMry-Q" association="_TvgCANjYEeWqoqMcLMry-Q"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_TvjFUNjYEeWqoqMcLMry-Q" name="add song" type="_6ef30NjXEeWqoqMcLMry-Q" association="_TvgCANjYEeWqoqMcLMry-Q"/>
+  </packagedElement>
+</uml:Model>

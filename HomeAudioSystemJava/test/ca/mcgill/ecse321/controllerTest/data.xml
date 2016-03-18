@@ -1,0 +1,12 @@
+<ca.mcgill.ecse321.homeAudioSystem.model.Manager id="1">
+  <albums id="2">
+    <Album id="3">
+      <name>Yellow Submarine</name>
+      <genre>rock</genre>
+      <releaseDate id="4">2016-02-21</releaseDate>
+      <songs id="5"/>
+    </Album>
+  </albums>
+  <artists id="6"/>
+  <playlists id="7"/>
+</ca.mcgill.ecse321.homeAudioSystem.model.Manager>
